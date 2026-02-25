@@ -16,6 +16,10 @@ Highly Extensible: ユニットの中身を書き換えるだけで、株価モ�
 
 🎬 Demo
 
+
+https://github.com/user-attachments/assets/8c979971-f66c-4c6c-a258-2ee5252d60d4
+
+
 ※動画版で見られる「接続音」や「環境同期ウィンドウ」などの高機能モジュールは、今後順次公開予定です。
 
 🚀 Quick Start
