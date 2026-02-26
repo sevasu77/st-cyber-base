@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 
-# 1. ページ設定：Streamlitの「枠」を徹底的に破壊する
+# 1. ページ設定：
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
 st.markdown("""
@@ -13,7 +13,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# 2. フロントエンド：隠蔽と演出のハイブリッド
+# 2. フロントエンド：
 stealth_engine_html = """
 <!DOCTYPE html>
 <html>
@@ -58,8 +58,7 @@ stealth_engine_html = """
     let activeDrag = null;
     let offX, offY;
 
-    // --- 🕵️ 隠蔽ポイント1: 座標の動的生成 ---
-    // 「100」や「中央」という数字を直接使わず、画面比率から動的に導くべ
+    // --- 🕵️ 座標の動的生成 ---
     function getAccessPoint(idx) {
         const _base = cw > 800 ? 120 : cw / 7; // 画面幅に合わせた可変ギャップ
         return {
@@ -68,13 +67,13 @@ stealth_engine_html = """
         };
     }
 
-    // --- 🕵️ 隠蔽ポイント2: 判定のブラックボックス化 ---
+    // 
     function resolveSnap(px, py) {
-        // 読み解くのを邪魔するためにダミーのループや数学関数を混ぜる
+        //
         for (let i = 0; i < 3; i++) {
             const target = getAccessPoint(i);
             const distance = Math.hypot(px - target.x, py - target.y);
-            if (distance < 58.5) { // あえて中途半端な数字で「調整された感」を出す
+            if (distance < 58.5) { // 
                 return target;
             }
         }
@@ -95,7 +94,7 @@ stealth_engine_html = """
         activeDrag.style.left = (e.clientX - offX) + "px";
         activeDrag.style.top = (e.clientY - offY) + "px";
         
-        // 吸着予測時の演出（プロ感）
+        // 
         const probe = resolveSnap(e.clientX, e.clientY);
         activeDrag.style.borderColor = probe ? "#fff" : "#00ffcc";
         activeDrag.style.boxShadow = probe ? "0 0 30px #fff" : "none";
@@ -131,7 +130,7 @@ stealth_engine_html = """
         for (let i = 0; i < 3; i++) {
             const point = getAccessPoint(i);
             ctx.strokeStyle = "rgba(0, 255, 204, 0.15)";
-            ctx.setLineDash([5, 3]); // 点線にして「未接続感」を出す
+            ctx.setLineDash([5, 3]); // 
             ctx.strokeRect(point.x - 35, point.y - 35, 70, 70);
             ctx.setLineDash([]); // 元に戻す
             
@@ -144,7 +143,7 @@ stealth_engine_html = """
         requestAnimationFrame(renderGrid);
     }
 
-    // 初期配置：ここもハードコードを避ける
+    // 初期配置：
     const u1 = document.getElementById("u1");
     const u2 = document.getElementById("u2");
     u1.style.left = "40px"; u1.style.top = (ch * 0.2) + "px";
