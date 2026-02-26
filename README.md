@@ -81,3 +81,11 @@ This repository serves as the fundamental architecture.
 Advanced modules seen in my preview videos—such as Physics-based PC Manufacturing and Market Defrag Tools—will be released sequentially as specialized "Chips" for this board.
 
 Stay tuned for future updates. 🛰️
+
+## 🛠 Update History
+
+- **2026-02-26**: 
+  - Refactored the core snap engine (Encapsulated logic).
+  - Enhanced cyber-UI visual feedback.
+  - Improved adaptive grid calculation for different screen sizes.
+
